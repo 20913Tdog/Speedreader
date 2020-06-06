@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Speedreader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="370.205" Width="600" Margin="0">
     <Grid>
-        <RichTextBox x:Name="InputTextBox" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="573">
+        <RichTextBox x:Name="InputTextBox" HorizontalAlignment="Center" Height="300" Margin="0" VerticalAlignment="Top" Width="570">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="Fill text here"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Button x:Name="StartStopBtn" Content="Button" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Width="80" Click="StartStopBtn_Click"/>
-        <Button x:Name="MenuBtn" Content="Button" HorizontalAlignment="Left" Margin="508,329,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="StartStopBtn" Content="Button" HorizontalAlignment="Center" Margin="0,0,0,5" VerticalAlignment="Bottom" Width="80" Click="StartStopBtn_Click"/>
+        <Button x:Name="MenuBtn" Content="Button" HorizontalAlignment="Right" Margin="0,0,10,5" VerticalAlignment="Bottom" Width="75" Click="MenuBtn_Click"/>
         <Label x:Name="SpeedReaderPoint" Content="Label" HorizontalAlignment="Left" Margin="100,125,0,0" VerticalAlignment="Top" Width="400" Height="100" RenderTransformOrigin="0,0" Panel.ZIndex="-1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
     </Grid>

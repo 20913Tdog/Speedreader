@@ -28,6 +28,7 @@ namespace Speedreader
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         bool isInReadMode;
+        bool isSeetingsOpen;
 
         int readingSpeed = 400;
         private static int position = 0;
@@ -39,6 +40,7 @@ namespace Speedreader
 
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             StartStopBtn.Content = "Start";
+            MenuBtn.Content = "Settings";
         }
 
         //private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -111,6 +113,11 @@ namespace Speedreader
         {
             TextRange textRange = new TextRange(rtb.Document.ContentStart, rtb.Document.ContentEnd);
             return textRange.Text;
+        }
+
+        private void MenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
