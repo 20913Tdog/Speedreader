@@ -174,6 +174,10 @@ namespace Speedreader
         {
             this.Width = resolution.X;
             this.Height = resolution.Y;
+
+            //InputTextBox.Margin = new Thickness(15, 0, 0, 0);
+            InputTextBox.Width = resolution.X - 35;
+            InputTextBox.Height = resolution.Y - 100;            
         }
 
         private void Mainwindow_Close(object sender, EventArgs e)
@@ -184,6 +188,7 @@ namespace Speedreader
         private void SetTextSize(int textSize)
         {
             SpeedReaderPoint.FontSize = textSize;
+            InputTextBox.FontSize = textSize;
         }
     }
 }

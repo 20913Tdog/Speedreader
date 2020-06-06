@@ -62,11 +62,6 @@ namespace Speedreader
             this.Closed += new EventHandler(SettingsWindow_Closed);
         }
 
-        private void FontColorBtnBackground_Changed(object sender, EventArgs e)
-        {
-
-        }
-
         private void SettingsWindow_Closed(object sender, EventArgs e)
         {
             MainWindow.mainWindow.isSeetingsOpen = false;

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600" Margin="0" ResizeMode="NoResize">
     <Grid>
-        <RichTextBox x:Name="InputTextBox" HorizontalAlignment="Center" Height="300" Margin="0" VerticalAlignment="Top" Width="570" MinWidth="0">
+        <RichTextBox x:Name="InputTextBox" Height="300" Margin="12,0,0,0" VerticalAlignment="Top" Width="570" MinWidth="0" HorizontalAlignment="Left">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="Fill text here"/>
