@@ -177,7 +177,8 @@ namespace Speedreader
 
             //InputTextBox.Margin = new Thickness(15, 0, 0, 0);
             InputTextBox.Width = resolution.X - 35;
-            InputTextBox.Height = resolution.Y - 100;            
+            InputTextBox.Height = resolution.Y - 100;    
+            //.w
         }
 
         private void Mainwindow_Close(object sender, EventArgs e)
