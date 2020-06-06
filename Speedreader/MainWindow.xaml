@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Speedreader"
         mc:Ignorable="d"
-        Title="MainWindow" Height="370.205" Width="600" Margin="0">
+        Title="MainWindow" Height="370.205" Width="600" Margin="0" ResizeMode="NoResize">
     <Grid>
         <RichTextBox x:Name="InputTextBox" HorizontalAlignment="Center" Height="300" Margin="0" VerticalAlignment="Top" Width="570">
             <FlowDocument>
