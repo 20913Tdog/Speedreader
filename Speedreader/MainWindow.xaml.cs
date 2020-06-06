@@ -31,7 +31,7 @@ namespace Speedreader
         private static SettingsWindow settingsWin;
 
         bool isInReadMode;
-        bool isSeetingsOpen;
+        public bool isSeetingsOpen;
 
         private static int position = 0;
         List<string> words = new List<string>();
@@ -49,15 +49,37 @@ namespace Speedreader
             }
         }
 
+        private Point resolution;
+        public Point Resolution
+        {
+            get { return resolution; }
+            set {
+                resolution = value;
+                SetWindowResolution(resolution);
+            }
+        }
+
+        private int textSize;
+        public int TextSize
+        {
+            get { return textSize; }
+            set
+            {
+                textSize = value;
+                SetTextSize(textSize);
+            }
+        }
+
         public MainWindow()
         {
-            mainWindow = this;
-
-            InitializeComponent();
-
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            mainWindow = this;            
+            InitializeComponent();           
+            
             StartStopBtn.Content = "Start";
             MenuBtn.Content = "Settings";
+
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            mainWindow.Closed += new EventHandler(Mainwindow_Close);
         }
 
         public void SetReadingSpeed(int value)
@@ -83,9 +105,9 @@ namespace Speedreader
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             ReadMode();
-            SpeedReaderPoint.Content = words[position];
-            if (position < words.Count -1)
+            if (position < words.Count)
             {
+                SpeedReaderPoint.Content = words[position];
                 position++;
             }
             else
@@ -93,6 +115,7 @@ namespace Speedreader
                 InputMode();
                 dispatcherTimer.Stop();
             }
+            
         }
 
         private void StartStopBtn_Click(object sender, RoutedEventArgs e)
@@ -123,9 +146,7 @@ namespace Speedreader
         {
             if (!isSeetingsOpen)
             {
-                isSeetingsOpen = true;
                 settingsWin = new SettingsWindow();
-
 
                 Point targetPoint = GetScreenPointOfControl(MenuBtn);
                 settingsWin.WindowStartupLocation = WindowStartupLocation.Manual;
@@ -133,20 +154,36 @@ namespace Speedreader
                 settingsWin.Top = targetPoint.Y;
 
                 settingsWin.Show();
+                settingsWin.Activate();
             } 
             else
             {
-                isSeetingsOpen = false;
                 settingsWin.Close();
                 settingsWin = null;
             }
         }
 
-        private Point GetScreenPointOfControl(Control control)
+        public Point GetScreenPointOfControl(Control control)
         {
             PresentationSource source = PresentationSource.FromVisual(this);
             System.Windows.Point targetPoints = source.CompositionTarget.TransformFromDevice.Transform(control.PointToScreen(new Point(0, 0)));
             return targetPoints;
+        }
+
+        private void SetWindowResolution(Point resolution)
+        {
+            this.Width = resolution.X;
+            this.Height = resolution.Y;
+        }
+
+        private void Mainwindow_Close(object sender, EventArgs e)
+        {
+            settingsWin.Close();
+        }
+
+        private void SetTextSize(int textSize)
+        {
+            SpeedReaderPoint.FontSize = textSize;
         }
     }
 }

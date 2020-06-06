@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Speedreader"
         mc:Ignorable="d"
         Title="Settings" Height="213.369" Width="285.214" ResizeMode="NoResize" ShowInTaskbar="False">
@@ -13,10 +14,27 @@
         <Label Content="font color" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top"/>
         <Label Content="background color" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="WpmTxtbox" HorizontalAlignment="Left" Height="23" Margin="150,23,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" LostFocus="WpmTxtbox_OnFocusLost"/>
-        <ComboBox x:Name="WinSizeCmbBox" HorizontalAlignment="Left" Margin="150,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="WinSizeCmbBox_SelectionChanged"/>
-        <ComboBox x:Name="FontSizeCmbBox" HorizontalAlignment="Left" Margin="150,86,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="FontSizeCmbBox_SelectionChanged"/>
-        <Button x:Name="FontColorBtn" Content="Button" HorizontalAlignment="Left" Margin="150,118,0,0" VerticalAlignment="Top" Width="20" Click="FontColorBtn_Click"/>
-        <Button x:Name="BgColorBtn" Content="Button" HorizontalAlignment="Left" Margin="150,149,0,0" VerticalAlignment="Top" Width="20" Click="BgColorBtn_Click"/>
+        <ComboBox x:Name="WinSizeCmbBox" HorizontalAlignment="Left" Margin="150,55,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="WinSizeCmbBox_SelectionChanged">
+            <ComboBoxItem Content="600x400" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="800x600" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="1000x600" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="1200x800" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Width="117.333333333333"/>
+        </ComboBox>
+        <ComboBox x:Name="FontSizeCmbBox" HorizontalAlignment="Left" Margin="150,86,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="FontSizeCmbBox_SelectionChanged">
+            <ComboBoxItem Content="12pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="14pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="16pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="18pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="20pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="22pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="24pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="26pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="28pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="30pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+            <ComboBoxItem Content="32pt" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="117.333333333333"/>
+        </ComboBox>
+        <Button x:Name="FontColorBtn" Content="" HorizontalAlignment="Left" Margin="150,118,0,0" VerticalAlignment="Top" Width="20" Click="FontColorBtn_Click" Background="Black"/>
+        <Button x:Name="BgColorBtn" Content="" HorizontalAlignment="Left" Margin="150,149,0,0" VerticalAlignment="Top" Width="20" Click="BgColorBtn_Click"/>
 
     </Grid>
 </Window>
